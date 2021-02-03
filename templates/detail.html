@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <header class="blog-header py-3">
+        <div class="row flex-nowrap justify-content-between align-items-center">
+            <div class="col-4 pt-1">
+                <a class="text-muted" href="/"></a>
+            </div>
+            <div class="col-4 text-center">
+                <a class="blog-header-logo text-dark" href="/">Large</a>
+            </div>
+            <div class="col-4 d-flex justify-content-end align-items-center">
+                <a class="text-muted" href="https://getbootstrap.com/docs/4.0/examples/blog/#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="mx-3">
+                        <circle cx="10.5" cy="10.5" r="7.5"></circle>
+                        <line x1="21" y1="21" x2="15.8" y2="15.8"></line>
+                    </svg>
+                </a>
+                <a class="btn btn-sm btn-outline-secondary" href="https://getbootstrap.com/docs/4.0/examples/blog/#">Sign
+                    up</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="nav-scroller py-1 mb-2">
+        <nav class="nav d-flex justify-content-between">
+            <a class="p-2 text-muted" href="https://getbootstrap.com/docs/4.0/examples/blog/#">World</a>
+            <a class="p-2 text-muted" href="https://getbootstrap.com/docs/4.0/examples/blog/#">U.S.</a>
+            <a class="p-2 text-muted" href="https://getbootstrap.com/docs/4.0/examples/blog/#">Technology</a>
+            <a class="p-2 text-muted" href="https://getbootstrap.com/docs/4.0/examples/blog/#">Design</a>
+            <a class="p-2 text-muted" href="https://getbootstrap.com/docs/4.0/examples/blog/#">Culture</a>
+            <a class="p-2 text-muted" href="https://getbootstrap.com/docs/4.0/examples/blog/#">Business</a>
+            <a class="p-2 text-muted" href="https://getbootstrap.com/docs/4.0/examples/blog/#">Politics</a>
+            <a class="p-2 text-muted" href="https://getbootstrap.com/docs/4.0/examples/blog/#">Opinion</a>
+            <a class="p-2 text-muted" href="https://getbootstrap.com/docs/4.0/examples/blog/#">Science</a>
+            <a class="p-2 text-muted" href="https://getbootstrap.com/docs/4.0/examples/blog/#">Health</a>
+            <a class="p-2 text-muted" href="https://getbootstrap.com/docs/4.0/examples/blog/#">Style</a>
+            <a class="p-2 text-muted" href="https://getbootstrap.com/docs/4.0/examples/blog/#">Travel</a>
+        </nav>
+    </div>
+</div>
+
+<main role="main" class="container">
+    <div class="row">
+        <div class="col-md-8 blog-main">
+            <div class="blog-post">
+                <h2 class="blog-post-title">{{ blog.title }}</h2>
+                <p class="blog-post-meta">{{ blog.date }} by {{ blog.blogger }}</p>
+               <p> <img class="img-fluid" src="{{ blog.image.url }}" alt=""></p>
+                <p>
+                    {{ blog.content }}
+                </p>
+            </div><!-- /.blog-post -->
+        </div><!-- /.blog-main -->
+
+        <aside class="col-md-4 blog-sidebar">
+            <div class="p-3 mb-3 bg-light rounded">
+                <h4 class="font-italic">About</h4>
+                <p class="mb-0">Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus
+                    sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+            </div>
+
+            <div class="p-3">
+                <h4 class="font-italic">Archives</h4>
+                <ol class="list-unstyled mb-0">
+                    <li><a href="https://getbootstrap.com/docs/4.0/examples/blog/#">March 2014</a></li>
+                    <li><a href="https://getbootstrap.com/docs/4.0/examples/blog/#">February 2014</a></li>
+                    <li><a href="https://getbootstrap.com/docs/4.0/examples/blog/#">January 2014</a></li>
+                    <li><a href="https://getbootstrap.com/docs/4.0/examples/blog/#">December 2013</a></li>
+                    <li><a href="https://getbootstrap.com/docs/4.0/examples/blog/#">November 2013</a></li>
+                    <li><a href="https://getbootstrap.com/docs/4.0/examples/blog/#">October 2013</a></li>
+                    <li><a href="https://getbootstrap.com/docs/4.0/examples/blog/#">September 2013</a></li>
+                    <li><a href="https://getbootstrap.com/docs/4.0/examples/blog/#">August 2013</a></li>
+                    <li><a href="https://getbootstrap.com/docs/4.0/examples/blog/#">July 2013</a></li>
+                    <li><a href="https://getbootstrap.com/docs/4.0/examples/blog/#">June 2013</a></li>
+                    <li><a href="https://getbootstrap.com/docs/4.0/examples/blog/#">May 2013</a></li>
+                    <li><a href="https://getbootstrap.com/docs/4.0/examples/blog/#">April 2013</a></li>
+                </ol>
+            </div>
+
+            <div class="p-3">
+                <h4 class="font-italic">Elsewhere</h4>
+                <ol class="list-unstyled">
+                    <li><a href="https://getbootstrap.com/docs/4.0/examples/blog/#">GitHub</a></li>
+                    <li><a href="https://getbootstrap.com/docs/4.0/examples/blog/#">Twitter</a></li>
+                    <li><a href="https://getbootstrap.com/docs/4.0/examples/blog/#">Facebook</a></li>
+                </ol>
+            </div>
+        </aside><!-- /.blog-sidebar -->
+
+    </div><!-- /.row -->
+
+</main><!-- /.container -->
+{% endblock %}
