@@ -27,18 +27,11 @@
 
     <div class="nav-scroller py-1 mb-2">
         <nav class="nav d-flex justify-content-between">
-            <a class="p-2 text-muted" href="https://getbootstrap.com/docs/4.0/examples/blog/#">World</a>
-            <a class="p-2 text-muted" href="https://getbootstrap.com/docs/4.0/examples/blog/#">U.S.</a>
-            <a class="p-2 text-muted" href="https://getbootstrap.com/docs/4.0/examples/blog/#">Technology</a>
-            <a class="p-2 text-muted" href="https://getbootstrap.com/docs/4.0/examples/blog/#">Design</a>
-            <a class="p-2 text-muted" href="https://getbootstrap.com/docs/4.0/examples/blog/#">Culture</a>
-            <a class="p-2 text-muted" href="https://getbootstrap.com/docs/4.0/examples/blog/#">Business</a>
-            <a class="p-2 text-muted" href="https://getbootstrap.com/docs/4.0/examples/blog/#">Politics</a>
-            <a class="p-2 text-muted" href="https://getbootstrap.com/docs/4.0/examples/blog/#">Opinion</a>
-            <a class="p-2 text-muted" href="https://getbootstrap.com/docs/4.0/examples/blog/#">Science</a>
-            <a class="p-2 text-muted" href="https://getbootstrap.com/docs/4.0/examples/blog/#">Health</a>
-            <a class="p-2 text-muted" href="https://getbootstrap.com/docs/4.0/examples/blog/#">Style</a>
-            <a class="p-2 text-muted" href="https://getbootstrap.com/docs/4.0/examples/blog/#">Travel</a>
+            {% for category in categories %}
+                <a class="p-2 text-muted" href="{% url 'category_page' category_slug=category.slug %}">
+                    {{ category.title }}
+                </a>
+            {% endfor %}
         </nav>
     </div>
 </div>
@@ -49,7 +42,9 @@
             <div class="blog-post">
                 <h2 class="blog-post-title">{{ blog.title }}</h2>
                 <p class="blog-post-meta">{{ blog.date }} by {{ blog.blogger }}</p>
-               <p> <img class="img-fluid" src="{{ blog.image.url }}" alt=""></p>
+                {% if blog.image %}
+                <p> <img class="img-fluid" src="{{ blog.image.url }}" alt=""></p>
+                {% endif %}
                 <p>
                     {{ blog.content }}
                 </p>
